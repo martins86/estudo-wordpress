@@ -1,31 +1,45 @@
-version: "3.9"
-    
+version: '3.9'
+
 services:
-  db:
-    image: mysql
-    volumes:
-      - db_data:/var/lib/mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: somewordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-    
   wordpress:
-    depends_on:
-      - db
-    image: wordpress:latest
-    volumes:
-      - wordpress_data:/var/www/html
+    build: '.'
+    container_name: 'wordpress'
+    restart: 'always'
     ports:
-      - "8000:80"
-    restart: always
+      - '8080:80'
     environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_HOST: 'db' 
+      WORDPRESS_DB_USER: 'wpuser'
+      WORDPRESS_DB_PASSWORD: 'wppassword'
+      WORDPRESS_DB_NAME: 'wpdb'
+      WORDPRESS_TABLE_PREFIX: 'dev_'
+      WORDPRESS_DEBUG: "1"
+    volumes:
+      - './wordpress:/var/www/html/'
+
+  db:
+    image: 'mysql'
+    container_name: 'mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'A@#!UnbOLTCR564'
+      MYSQL_DATABASE: 'wpdb'
+      MYSQL_USER: 'wpuser'
+      MYSQL_PASSWORD: 'wppassword'
+    restart: 'always'
+    volumes:
+      - 'db:/var/lib/mysql'
+
+  adminer:
+    container_name: 'adminer'
+    depends_on:
+      - 'db'
+    image: 'adminer'
+    restart: 'always'
+    ports:
+      - '8888:8080'
+
+networks:
+  dev-network:
+
 volumes:
-  db_data: {}
-  wordpress_data: {}
+  db:
