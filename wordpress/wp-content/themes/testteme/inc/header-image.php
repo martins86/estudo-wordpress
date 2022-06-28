@@ -2,7 +2,7 @@
 /**
  * Displays header media
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 ?>

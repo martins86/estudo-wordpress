@@ -2,13 +2,13 @@
 /**
  * Homepage Sections.
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 // Add Panel.
 $wp_customize->add_panel( 'homepage_sections',
 	array(
-	'title'      => __( 'Homepage Sections', 'mero-magazine' ),
+	'title'      => __( 'Homepage Sections', 'test-teme' ),
 	'priority'   => 100,
 	'capability' => 'edit_theme_options',
 	)
@@ -16,7 +16,7 @@ $wp_customize->add_panel( 'homepage_sections',
 
 // Featured Posts Section
 $wp_customize->add_section('section_featured_posts', array(    
-	'title'       => __('Featured', 'mero-magazine'),
+	'title'       => __('Featured', 'test-teme'),
 	'panel'       => 'homepage_sections'    
 ));
 
@@ -25,12 +25,12 @@ $wp_customize->add_setting('featured_posts_section_show', array(
 	'default' 			=> false,
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_checkbox'
+	'sanitize_callback' => 'test_teme_sanitize_checkbox'
 	)
 );
 
 $wp_customize->add_control('featured_posts_section_show', array(		
-	'label' 	=> __('Show Section', 'mero-magazine'),
+	'label' 	=> __('Show Section', 'test-teme'),
 	'section' 	=> 'section_featured_posts',
 	'type' 		=> 'checkbox',	
 	)
@@ -47,9 +47,9 @@ $wp_customize->add_setting('featured_posts_category',
 );
 
 $wp_customize->add_control( 
-	new Mero_Magazine_Customize_Category_Control( $wp_customize, 'featured_posts_category', 
+	new test_teme_Customize_Category_Control( $wp_customize, 'featured_posts_category', 
         array(
-            'label'         => __( 'Select Category', 'mero-magazine' ),
+            'label'         => __( 'Select Category', 'test-teme' ),
             'section'       => 'section_featured_posts',
 			'settings'  	=> 'featured_posts_category',
         )
@@ -58,7 +58,7 @@ $wp_customize->add_control(
 
 // Business Posts Section
 $wp_customize->add_section('section_business_posts', array(    
-	'title'       => __('Business', 'mero-magazine'),
+	'title'       => __('Business', 'test-teme'),
 	'panel'       => 'homepage_sections'    
 ));
 
@@ -67,12 +67,12 @@ $wp_customize->add_setting('business_posts_section_show', array(
 	'default' 			=> false,
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_checkbox'
+	'sanitize_callback' => 'test_teme_sanitize_checkbox'
 	)
 );
 
 $wp_customize->add_control('business_posts_section_show', array(		
-	'label' 	=> __('Show Section', 'mero-magazine'),
+	'label' 	=> __('Show Section', 'test-teme'),
 	'section' 	=> 'section_business_posts',
 	'type' 		=> 'checkbox',	
 	)
@@ -80,7 +80,7 @@ $wp_customize->add_control('business_posts_section_show', array(
 
 // Title
 $wp_customize->add_setting( 'business_section_title', array(
-	'default'           => esc_html__('Business', 'mero-magazine'),
+	'default'           => esc_html__('Business', 'test-teme'),
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
@@ -88,7 +88,7 @@ $wp_customize->add_setting( 'business_section_title', array(
 ) );
 
 $wp_customize->add_control( 'business_section_title', array(
-	'label'       => __( 'Title', 'mero-magazine' ),
+	'label'       => __( 'Title', 'test-teme' ),
 	'section'     => 'section_business_posts',
 	'type'        => 'text',
 ) );
@@ -104,9 +104,9 @@ $wp_customize->add_setting('business_posts_category',
 );
 
 $wp_customize->add_control( 
-	new Mero_Magazine_Customize_Category_Control( $wp_customize, 'business_posts_category', 
+	new test_teme_Customize_Category_Control( $wp_customize, 'business_posts_category', 
         array(
-            'label'         => __( 'Select Category', 'mero-magazine' ),
+            'label'         => __( 'Select Category', 'test-teme' ),
             'section'       => 'section_business_posts',
 			'settings'  	=> 'business_posts_category',
         )
@@ -115,7 +115,7 @@ $wp_customize->add_control(
 
 // Lifestyle Posts Section
 $wp_customize->add_section('section_lifestyle_posts', array(    
-	'title'       => __('Lifestyle', 'mero-magazine'),
+	'title'       => __('Lifestyle', 'test-teme'),
 	'panel'       => 'homepage_sections'    
 ));
 
@@ -124,12 +124,12 @@ $wp_customize->add_setting('lifestyle_posts_section_show', array(
 	'default' 			=> false,
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_checkbox'
+	'sanitize_callback' => 'test_teme_sanitize_checkbox'
 	)
 );
 
 $wp_customize->add_control('lifestyle_posts_section_show', array(		
-	'label' 	=> __('Show Section', 'mero-magazine'),
+	'label' 	=> __('Show Section', 'test-teme'),
 	'section' 	=> 'section_lifestyle_posts',
 	'type' 		=> 'checkbox',	
 	)
@@ -137,7 +137,7 @@ $wp_customize->add_control('lifestyle_posts_section_show', array(
 
 // Title
 $wp_customize->add_setting( 'lifestyle_section_title', array(
-	'default'           => esc_html__('Lifestyle', 'mero-magazine'),
+	'default'           => esc_html__('Lifestyle', 'test-teme'),
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
@@ -145,7 +145,7 @@ $wp_customize->add_setting( 'lifestyle_section_title', array(
 ) );
 
 $wp_customize->add_control( 'lifestyle_section_title', array(
-	'label'       => __( 'Title', 'mero-magazine' ),
+	'label'       => __( 'Title', 'test-teme' ),
 	'section'     => 'section_lifestyle_posts',
 	'type'        => 'text',
 ) );
@@ -161,9 +161,9 @@ $wp_customize->add_setting('lifestyle_posts_category',
 );
 
 $wp_customize->add_control( 
-	new Mero_Magazine_Customize_Category_Control( $wp_customize, 'lifestyle_posts_category', 
+	new test_teme_Customize_Category_Control( $wp_customize, 'lifestyle_posts_category', 
         array(
-            'label'         => __( 'Select Category', 'mero-magazine' ),
+            'label'         => __( 'Select Category', 'test-teme' ),
             'section'       => 'section_lifestyle_posts',
 			'settings'  	=> 'lifestyle_posts_category',
         )
@@ -172,7 +172,7 @@ $wp_customize->add_control(
 
 // First Advertisement Section
 $wp_customize->add_section('section_first_advertisement', array(    
-	'title'       => __('First Advertisement', 'mero-magazine'),
+	'title'       => __('First Advertisement', 'test-teme'),
 	'panel'       => 'homepage_sections'    
 ));
 
@@ -181,12 +181,12 @@ $wp_customize->add_setting('first_advertisement_section_show', array(
 	'default' 			=> false,
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_checkbox'
+	'sanitize_callback' => 'test_teme_sanitize_checkbox'
 	)
 );
 
 $wp_customize->add_control('first_advertisement_section_show', array(		
-	'label' 	=> __('Show Section', 'mero-magazine'),
+	'label' 	=> __('Show Section', 'test-teme'),
 	'section' 	=> 'section_first_advertisement',
 	'type' 		=> 'checkbox',	
 	)
@@ -195,12 +195,12 @@ $wp_customize->add_control('first_advertisement_section_show', array(
 // First Advertisement Image
 $wp_customize->add_setting('first_advertisement_image', array(
     'type' => 'theme_mod',
-    'sanitize_callback' => 'mero_magazine_sanitize_image',
+    'sanitize_callback' => 'test_teme_sanitize_image',
 ));
 
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'mero_magazine_first_advertisement', 
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'test_teme_first_advertisement', 
 	array(
-			'label' 	=> __('Image Size: 900 x 60', 'mero-magazine'),
+			'label' 	=> __('Image Size: 900 x 60', 'test-teme'),
             'settings'  => 'first_advertisement_image',
 			'section' 	=> 'section_first_advertisement',
         )
@@ -214,14 +214,14 @@ $wp_customize->add_setting( 'first_advertisement_url', array(
 ) );
 
 $wp_customize->add_control( 'first_advertisement_url', array(
-    'label'             => esc_html__( 'Advertisement Url', 'mero-magazine' ),
+    'label'             => esc_html__( 'Advertisement Url', 'test-teme' ),
     'section'           => 'section_first_advertisement',
     'type'              => 'url',
 ) );
 
 // Entertainment Posts Section
 $wp_customize->add_section('section_entertainment_posts', array(    
-	'title'       => __('Entertainment', 'mero-magazine'),
+	'title'       => __('Entertainment', 'test-teme'),
 	'panel'       => 'homepage_sections'    
 ));
 
@@ -230,12 +230,12 @@ $wp_customize->add_setting('entertainment_posts_section_show', array(
 	'default' 			=> false,
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_checkbox'
+	'sanitize_callback' => 'test_teme_sanitize_checkbox'
 	)
 );
 
 $wp_customize->add_control('entertainment_posts_section_show', array(		
-	'label' 	=> __('Show Section', 'mero-magazine'),
+	'label' 	=> __('Show Section', 'test-teme'),
 	'section' 	=> 'section_entertainment_posts',
 	'type' 		=> 'checkbox',	
 	)
@@ -243,7 +243,7 @@ $wp_customize->add_control('entertainment_posts_section_show', array(
 
 // Title
 $wp_customize->add_setting( 'entertainment_section_title', array(
-	'default'           => esc_html__('Entertainment', 'mero-magazine'),
+	'default'           => esc_html__('Entertainment', 'test-teme'),
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
@@ -251,7 +251,7 @@ $wp_customize->add_setting( 'entertainment_section_title', array(
 ) );
 
 $wp_customize->add_control( 'entertainment_section_title', array(
-	'label'       => __( 'Title', 'mero-magazine' ),
+	'label'       => __( 'Title', 'test-teme' ),
 	'section'     => 'section_entertainment_posts',
 	'type'        => 'text',
 ) );
@@ -267,9 +267,9 @@ $wp_customize->add_setting('entertainment_posts_category',
 );
 
 $wp_customize->add_control( 
-	new Mero_Magazine_Customize_Category_Control( $wp_customize, 'entertainment_posts_category', 
+	new test_teme_Customize_Category_Control( $wp_customize, 'entertainment_posts_category', 
         array(
-            'label'         => __( 'Select Category', 'mero-magazine' ),
+            'label'         => __( 'Select Category', 'test-teme' ),
             'section'       => 'section_entertainment_posts',
 			'settings'  	=> 'entertainment_posts_category',
         )
@@ -278,7 +278,7 @@ $wp_customize->add_control(
 
 // Health Posts Section
 $wp_customize->add_section('section_health_posts', array(    
-	'title'       => __('Health', 'mero-magazine'),
+	'title'       => __('Health', 'test-teme'),
 	'panel'       => 'homepage_sections'    
 ));
 
@@ -287,12 +287,12 @@ $wp_customize->add_setting('health_posts_section_show', array(
 	'default' 			=> false,
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_checkbox'
+	'sanitize_callback' => 'test_teme_sanitize_checkbox'
 	)
 );
 
 $wp_customize->add_control('health_posts_section_show', array(		
-	'label' 	=> __('Show Section', 'mero-magazine'),
+	'label' 	=> __('Show Section', 'test-teme'),
 	'section' 	=> 'section_health_posts',
 	'type' 		=> 'checkbox',	
 	)
@@ -300,7 +300,7 @@ $wp_customize->add_control('health_posts_section_show', array(
 
 // Title
 $wp_customize->add_setting( 'health_section_title', array(
-	'default'           => esc_html__('Health', 'mero-magazine'),
+	'default'           => esc_html__('Health', 'test-teme'),
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
@@ -308,7 +308,7 @@ $wp_customize->add_setting( 'health_section_title', array(
 ) );
 
 $wp_customize->add_control( 'health_section_title', array(
-	'label'       => __( 'Title', 'mero-magazine' ),
+	'label'       => __( 'Title', 'test-teme' ),
 	'section'     => 'section_health_posts',
 	'type'        => 'text',
 ) );
@@ -324,9 +324,9 @@ $wp_customize->add_setting('health_posts_category',
 );
 
 $wp_customize->add_control( 
-	new Mero_Magazine_Customize_Category_Control( $wp_customize, 'health_posts_category', 
+	new test_teme_Customize_Category_Control( $wp_customize, 'health_posts_category', 
         array(
-            'label'         => __( 'Select Category', 'mero-magazine' ),
+            'label'         => __( 'Select Category', 'test-teme' ),
             'section'       => 'section_health_posts',
 			'settings'  	=> 'health_posts_category',
         )
@@ -335,7 +335,7 @@ $wp_customize->add_control(
 
 // Travel Posts Section
 $wp_customize->add_section('section_travel_posts', array(    
-	'title'       => __('Travel', 'mero-magazine'),
+	'title'       => __('Travel', 'test-teme'),
 	'panel'       => 'homepage_sections'    
 ));
 
@@ -344,12 +344,12 @@ $wp_customize->add_setting('travel_posts_section_show', array(
 	'default' 			=> false,
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_checkbox'
+	'sanitize_callback' => 'test_teme_sanitize_checkbox'
 	)
 );
 
 $wp_customize->add_control('travel_posts_section_show', array(		
-	'label' 	=> __('Show Section', 'mero-magazine'),
+	'label' 	=> __('Show Section', 'test-teme'),
 	'section' 	=> 'section_travel_posts',
 	'type' 		=> 'checkbox',	
 	)
@@ -357,7 +357,7 @@ $wp_customize->add_control('travel_posts_section_show', array(
 
 // Title
 $wp_customize->add_setting( 'travel_section_title', array(
-	'default'           => esc_html__('Travel', 'mero-magazine'),
+	'default'           => esc_html__('Travel', 'test-teme'),
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
@@ -365,7 +365,7 @@ $wp_customize->add_setting( 'travel_section_title', array(
 ) );
 
 $wp_customize->add_control( 'travel_section_title', array(
-	'label'       => __( 'Title', 'mero-magazine' ),
+	'label'       => __( 'Title', 'test-teme' ),
 	'section'     => 'section_travel_posts',
 	'type'        => 'text',
 ) );
@@ -381,9 +381,9 @@ $wp_customize->add_setting('travel_posts_category',
 );
 
 $wp_customize->add_control( 
-	new Mero_Magazine_Customize_Category_Control( $wp_customize, 'travel_posts_category', 
+	new test_teme_Customize_Category_Control( $wp_customize, 'travel_posts_category', 
         array(
-            'label'         => __( 'Select Category', 'mero-magazine' ),
+            'label'         => __( 'Select Category', 'test-teme' ),
             'section'       => 'section_travel_posts',
 			'settings'  	=> 'travel_posts_category',
         )

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 ?>
@@ -25,7 +25,7 @@
 <?php do_action( 'wp_body_open' ); ?>
 
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mero-magazine' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'test-teme' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
@@ -60,7 +60,7 @@
 				if ( $header_advertisement_section_show == true ): ?>
 					<?php if( !empty( $header_advertisement_image ) && !empty( $header_advertisement_url ) ) : ?>
 	                	<div id="header-advertisement">
-	                    	<a href="<?php echo esc_url($header_advertisement_url); ?>" target="_blank"><img src="<?php echo esc_url($header_advertisement_image); ?>" alt="<?php esc_attr_e('header-advertisement', 'mero-magazine'); ?>"></a>
+	                    	<a href="<?php echo esc_url($header_advertisement_url); ?>" target="_blank"><img src="<?php echo esc_url($header_advertisement_image); ?>" alt="<?php esc_attr_e('header-advertisement', 'test-teme'); ?>"></a>
 	                	</div><!-- #header-advertisement -->
         			<?php endif; ?>
             	<?php endif; ?>
@@ -71,10 +71,10 @@
 			<div class="container">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 					<?php
-						echo mero_magazine_get_svg( array( 'icon' => 'bars' ) );
-						echo mero_magazine_get_svg( array( 'icon' => 'close' ) );
+						echo test_teme_get_svg( array( 'icon' => 'bars' ) );
+						echo test_teme_get_svg( array( 'icon' => 'close' ) );
 					?>
-					<span class="primary-menu-label"><?php esc_html_e( 'Menu', 'mero-magazine' ); ?></span>
+					<span class="primary-menu-label"><?php esc_html_e( 'Menu', 'test-teme' ); ?></span>
 				</button>
 
 				<?php

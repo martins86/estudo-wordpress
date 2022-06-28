@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses mero_magazine_header_style()
+ * @uses test_teme_header_style()
  */
-function mero_magazine_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'mero_magazine_custom_header_args', array(
+function test_teme_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'test_teme_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 2500,
 		'height'                 => 300,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'mero_magazine_header_style',
+		'wp-head-callback'       => 'test_teme_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'mero_magazine_custom_header_setup' );
+add_action( 'after_setup_theme', 'test_teme_custom_header_setup' );
 
-if ( ! function_exists( 'mero_magazine_header_style' ) ) :
+if ( ! function_exists( 'test_teme_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see mero_magazine_custom_header_setup().
+	 * @see test_teme_custom_header_setup().
 	 */
-	function mero_magazine_header_style() {
+	function test_teme_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

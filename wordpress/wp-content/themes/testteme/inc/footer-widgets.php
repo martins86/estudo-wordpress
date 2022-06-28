@@ -2,12 +2,12 @@
 /**
  * Displays footer widgets if assigned
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 ?>
 
-<aside class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'mero-magazine' ); ?>">
+<aside class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'test-teme' ); ?>">
 	<?php
 	if ( is_active_sidebar( 'sidebar-2' ) ) {
 		?>

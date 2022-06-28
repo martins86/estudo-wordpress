@@ -2,7 +2,7 @@
 /**
  * Custom Customizer Controls.
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 if ( ! class_exists( 'WP_Customize_Section' ) ) {
@@ -15,7 +15,7 @@ if ( ! class_exists( 'WP_Customize_Section' ) ) {
  * @since  1.0.0
  * @access public
  */
-class mero_magazine_Customize_Upsell_Section extends WP_Customize_Section{
+class test_teme_Customize_Upsell_Section extends WP_Customize_Section{
 
 	/**
 	 * The type of customize section being rendered.
@@ -24,7 +24,7 @@ class mero_magazine_Customize_Upsell_Section extends WP_Customize_Section{
 	 * @access public
 	 * @var    string
 	 */
-	public $type = 'mero-magazine-upsell';
+	public $type = 'test-teme-upsell';
 
 	/**
 	 * Custom button text to output.

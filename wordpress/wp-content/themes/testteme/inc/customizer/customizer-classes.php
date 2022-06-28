@@ -2,12 +2,12 @@
 /**
 * Custom classes for customizer
 *
-* @package mero_magazine
+* @package test_teme
 */
  
 if ( class_exists( 'WP_Customize_Control' ) ) {
     
-    class Mero_Magazine_Customize_Category_Control extends WP_Customize_Control {
+    class test_teme_Customize_Category_Control extends WP_Customize_Control {
         
         /**
          * Render the control's content.
@@ -19,7 +19,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                 array(
                     'name'              => '_customize-dropdown-categories-' . $this->id,
                     'echo'              => 0,
-                    'show_option_none'  => __( '&mdash; Select Category &mdash;', 'mero-magazine' ),
+                    'show_option_none'  => __( '&mdash; Select Category &mdash;', 'test-teme' ),
                     'option_none_value' => '0',
                     'selected'          => $this->value(),
                 )

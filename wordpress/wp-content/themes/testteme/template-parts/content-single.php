@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 ?>
@@ -13,7 +13,7 @@
 	<div class="blog-post-item">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="featured-image">
-				<?php mero_magazine_post_thumbnail(); ?>
+				<?php test_teme_post_thumbnail(); ?>
 			</div><!-- .featured-image -->
         <?php endif; ?>
 
@@ -22,8 +22,8 @@
 			?>
 			<div class="entry-meta">
 				<?php
-					mero_magazine_posted_by();
-					mero_magazine_posted_on();
+					test_teme_posted_by();
+					test_teme_posted_on();
 				?>
 			</div><!-- .entry-meta -->			
 		<?php endif; ?>
@@ -42,7 +42,7 @@
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php mero_magazine_entry_footer(); ?>
+			<?php test_teme_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</div><!-- .blog-post-item -->
 </article><!-- #post-<?php the_ID(); ?> -->

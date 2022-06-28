@@ -1,39 +1,33 @@
 <?php
 /**
  * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package mero_magazine
  */
 
 ?>
-	</div><!-- #content -->
+	</div>
 
-	<footer id="colophon" class="site-footer">
-		<?php if ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) ) : ?>
-			<div id="footer-widgets" class="container">
+	<footer>
+		<?php if ( is_active_sidebar( 'sidebar-two' ) || is_active_sidebar( 'sidebar-three' ) || is_active_sidebar( 'sidebar-four' ) ) : ?>
+			<div>
 				<?php
 					get_template_part( 'inc/footer', 'widgets' );
 				?>
-			</div><!-- .container -->
+			</div>
 		<?php endif; ?>
 
-		<div class="site-info">
-			<div class="container">
+		<div>
+			<div>
 				<?php
-				$copyright_text = sprintf( __( 'Theme Mero Magazine by %s', 'mero-magazine' ), '<a target="_blank" rel="designer" href="'.esc_url( 'https://kantipurthemes.com/' ).'">'. esc_html__( 'Kantipur Themes', 'mero-magazine' ). '</a>' ); ?>
+				$copyright_text = sprintf( __( 'Test Teme by %s', 'test-teme' ), '<a target="_blank" rel="designer" href="'.esc_url( '#' ).'">'. esc_html__( 'Thiago Martins', 'test-teme' ). '</a>' ); ?>
 
 				<?php echo $copyright_text; ?>
-			</div><!-- .container -->
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+			</div>
+		</div>
+	</footer>
 
 	<a href="#page" class="to-top"></a>
 	
-</div><!-- #page -->
+</div>
 
 <?php wp_footer(); ?>
 

@@ -2,13 +2,13 @@
 /**
  * Header Advertisement.
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 // Add Panel.
 $wp_customize->add_panel( 'header_advertisement',
 	array(
-	'title'      => __( 'Header Advertisement', 'mero-magazine' ),
+	'title'      => __( 'Header Advertisement', 'test-teme' ),
 	'priority'   => 10,
 	'capability' => 'edit_theme_options',
 	)
@@ -16,7 +16,7 @@ $wp_customize->add_panel( 'header_advertisement',
 
 // Header Advertisement
 $wp_customize->add_section('section_header_advertisement', array(    
-	'title'       => __('Advertisement', 'mero-magazine'),
+	'title'       => __('Advertisement', 'test-teme'),
 	'panel'       => 'header_advertisement'    
 ));
 
@@ -25,12 +25,12 @@ $wp_customize->add_setting('header_advertisement_section_show', array(
 	'default' 			=> false,
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_checkbox'
+	'sanitize_callback' => 'test_teme_sanitize_checkbox'
 	)
 );
 
 $wp_customize->add_control('header_advertisement_section_show', array(		
-	'label' 	=> __('Show Advertisement', 'mero-magazine'),
+	'label' 	=> __('Show Advertisement', 'test-teme'),
 	'section' 	=> 'section_header_advertisement',
 	'type' 		=> 'checkbox',	
 	)
@@ -39,12 +39,12 @@ $wp_customize->add_control('header_advertisement_section_show', array(
 // Advertisement Image
 $wp_customize->add_setting('header_advertisement_image', array(
     'type' => 'theme_mod',
-    'sanitize_callback' => 'mero_magazine_sanitize_image',
+    'sanitize_callback' => 'test_teme_sanitize_image',
 ));
 
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'mero_magazine_header_advertisement', 
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'test_teme_header_advertisement', 
 	array(
-			'label' 	=> __('Advertisement Image: 900 x 60', 'mero-magazine'),
+			'label' 	=> __('Advertisement Image: 900 x 60', 'test-teme'),
             'settings'  => 'header_advertisement_image',
 			'section' 	=> 'section_header_advertisement',
         )
@@ -58,7 +58,7 @@ $wp_customize->add_setting( 'header_advertisement_url', array(
 ) );
 
 $wp_customize->add_control( 'header_advertisement_url', array(
-    'label'             => esc_html__( 'Advertisement Url', 'mero-magazine' ),
+    'label'             => esc_html__( 'Advertisement Url', 'test-teme' ),
     'section'           => 'section_header_advertisement',
     'type'              => 'url',
 ) );

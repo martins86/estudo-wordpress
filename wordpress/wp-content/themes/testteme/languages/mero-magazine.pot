@@ -63,7 +63,7 @@ msgstr ""
 
 #: footer.php:27
 #, php-format
-msgid "Theme Mero Magazine by %s"
+msgid "Theme Test Teme by %s"
 msgstr ""
 
 #: footer.php:27
@@ -211,7 +211,7 @@ msgid "Next"
 msgstr ""
 
 #: inc/customizer.php:52
-msgid "Mero Magazine Pro"
+msgid "Test Teme Pro"
 msgstr ""
 
 #: inc/customizer.php:53

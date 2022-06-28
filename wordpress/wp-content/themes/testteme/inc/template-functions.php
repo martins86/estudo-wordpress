@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 /**
@@ -11,7 +11,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function mero_magazine_body_classes( $classes ) {
+function test_teme_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -49,14 +49,14 @@ function mero_magazine_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'mero_magazine_body_classes' );
+add_filter( 'body_class', 'test_teme_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function mero_magazine_pingback_header() {
+function test_teme_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'mero_magazine_pingback_header' );
+add_action( 'wp_head', 'test_teme_pingback_header' );

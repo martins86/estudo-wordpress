@@ -2,13 +2,13 @@
 /**
  * Theme Options.
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 // Add Panel.
 $wp_customize->add_panel( 'theme_option_panel',
 	array(
-	'title'      => __( 'Theme Options', 'mero-magazine' ),
+	'title'      => __( 'Theme Options', 'test-teme' ),
 	'priority'   => 100,
 	'capability' => 'edit_theme_options',
 	)
@@ -16,7 +16,7 @@ $wp_customize->add_panel( 'theme_option_panel',
 
 // Sidebar section
 $wp_customize->add_section('section_sidebar', array(    
-	'title'       => __('Sidebar Options', 'mero-magazine'),
+	'title'       => __('Sidebar Options', 'test-teme'),
 	'panel'       => 'theme_option_panel'    
 ));
 
@@ -26,21 +26,21 @@ $wp_customize->add_setting('blog_sidebar',
 	'default' 			=> 'no-sidebar',
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_select',
+	'sanitize_callback' => 'test_teme_sanitize_select',
 	'transport'         => 'refresh',
 	)
 );
 
 $wp_customize->add_control('blog_sidebar', 
 	array(		
-	'label' 	=> __('Blog Sidebar', 'mero-magazine'),
+	'label' 	=> __('Blog Sidebar', 'test-teme'),
 	'section' 	=> 'section_sidebar',
 	'settings'  => 'blog_sidebar',
 	'type' 		=> 'radio',
 	'choices' 	=> array(		
-		'left-sidebar' 	=> __( 'Left Sidebar', 'mero-magazine'),						
-		'right-sidebar' => __( 'Right Sidebar', 'mero-magazine'),	
-		'no-sidebar' 	=> __( 'No Sidebar', 'mero-magazine'),	
+		'left-sidebar' 	=> __( 'Left Sidebar', 'test-teme'),						
+		'right-sidebar' => __( 'Right Sidebar', 'test-teme'),	
+		'no-sidebar' 	=> __( 'No Sidebar', 'test-teme'),	
 		),	
 	)
 );
@@ -51,21 +51,21 @@ $wp_customize->add_setting('single_post_sidebar',
 	'default' 			=> 'right-sidebar',
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_select',
+	'sanitize_callback' => 'test_teme_sanitize_select',
 	'transport'         => 'refresh',
 	)
 );
 
 $wp_customize->add_control('single_post_sidebar', 
 	array(		
-	'label' 	=> __('Single Post Sidebar', 'mero-magazine'),
+	'label' 	=> __('Single Post Sidebar', 'test-teme'),
 	'section' 	=> 'section_sidebar',
 	'settings'  => 'single_post_sidebar',
 	'type' 		=> 'radio',
 	'choices' 	=> array(		
-		'left-sidebar' 	=> __( 'Left Sidebar', 'mero-magazine'),						
-		'right-sidebar' => __( 'Right Sidebar', 'mero-magazine'),	
-		'no-sidebar' 	=> __( 'No Sidebar', 'mero-magazine'),	
+		'left-sidebar' 	=> __( 'Left Sidebar', 'test-teme'),						
+		'right-sidebar' => __( 'Right Sidebar', 'test-teme'),	
+		'no-sidebar' 	=> __( 'No Sidebar', 'test-teme'),	
 		),	
 	)
 );
@@ -76,21 +76,21 @@ $wp_customize->add_setting('archive_sidebar',
 	'default' 			=> 'no-sidebar',
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_select',
+	'sanitize_callback' => 'test_teme_sanitize_select',
 	'transport'         => 'refresh',
 	)
 );
 
 $wp_customize->add_control('archive_sidebar', 
 	array(		
-	'label' 	=> __('Archive Sidebar', 'mero-magazine'),
+	'label' 	=> __('Archive Sidebar', 'test-teme'),
 	'section' 	=> 'section_sidebar',
 	'settings'  => 'archive_sidebar',
 	'type' 		=> 'radio',
 	'choices' 	=> array(		
-		'left-sidebar' 	=> __( 'Left Sidebar', 'mero-magazine'),						
-		'right-sidebar' => __( 'Right Sidebar', 'mero-magazine'),	
-		'no-sidebar' 	=> __( 'No Sidebar', 'mero-magazine'),	
+		'left-sidebar' 	=> __( 'Left Sidebar', 'test-teme'),						
+		'right-sidebar' => __( 'Right Sidebar', 'test-teme'),	
+		'no-sidebar' 	=> __( 'No Sidebar', 'test-teme'),	
 		),	
 	)
 );
@@ -101,21 +101,21 @@ $wp_customize->add_setting('page_sidebar',
 	'default' 			=> 'no-sidebar',
 	'type'              => 'theme_mod',
 	'capability'        => 'edit_theme_options',
-	'sanitize_callback' => 'mero_magazine_sanitize_select',
+	'sanitize_callback' => 'test_teme_sanitize_select',
 	'transport'         => 'refresh',
 	)
 );
 
 $wp_customize->add_control('page_sidebar', 
 	array(		
-	'label' 	=> __('Page Sidebar', 'mero-magazine'),
+	'label' 	=> __('Page Sidebar', 'test-teme'),
 	'section' 	=> 'section_sidebar',
 	'settings'  => 'page_sidebar',
 	'type' 		=> 'radio',
 	'choices' 	=> array(		
-		'left-sidebar' 	=> __( 'Left Sidebar', 'mero-magazine'),						
-		'right-sidebar' => __( 'Right Sidebar', 'mero-magazine'),	
-		'no-sidebar' 	=> __( 'No Sidebar', 'mero-magazine'),	
+		'left-sidebar' 	=> __( 'Left Sidebar', 'test-teme'),						
+		'right-sidebar' => __( 'Right Sidebar', 'test-teme'),	
+		'no-sidebar' 	=> __( 'No Sidebar', 'test-teme'),	
 		),	
 	)
 );

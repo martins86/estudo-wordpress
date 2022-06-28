@@ -4,21 +4,21 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php mero_magazine_post_thumbnail(); ?>
+	<?php test_teme_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mero-magazine' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'test-teme' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -31,7 +31,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'mero-magazine' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'test-teme' ),
 						array(
 							'span' => array(
 								'class' => array(),

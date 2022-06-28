@@ -2,13 +2,13 @@
 /**
  * SVG icons related functions and filters
  *
- * @package mero_magazine
+ * @package test_teme
  */
 
 /**
  * Add SVG definitions to the footer.
  */
-function mero_magazine_include_svg_icons() {
+function test_teme_include_svg_icons() {
 	// Define SVG sprite file.
 	$svg_icons = get_template_directory() . '/assets/images/svg-icons.svg';
 
@@ -17,7 +17,7 @@ function mero_magazine_include_svg_icons() {
 		require_once( $svg_icons );
 	}
 }
-add_action( 'wp_footer', 'mero_magazine_include_svg_icons', 9999 );
+add_action( 'wp_footer', 'test_teme_include_svg_icons', 9999 );
 
 /**
  * Return SVG markup.
@@ -31,15 +31,15 @@ add_action( 'wp_footer', 'mero_magazine_include_svg_icons', 9999 );
  * }
  * @return string SVG markup.
  */
-function mero_magazine_get_svg( $args = array() ) {
+function test_teme_get_svg( $args = array() ) {
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
-		return __( 'Please define default parameters in the form of an array.', 'mero-magazine' );
+		return __( 'Please define default parameters in the form of an array.', 'test-teme' );
 	}
 
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return __( 'Please define an SVG icon filename.', 'mero-magazine' );
+		return __( 'Please define an SVG icon filename.', 'test-teme' );
 	}
 
 	// Set defaults.
@@ -60,19 +60,19 @@ function mero_magazine_get_svg( $args = array() ) {
 	$aria_labelledby = '';
 
 	/*
-	 * Mero Magazine doesn't use the SVG title or description attributes; non-decorative icons are described with .screen-reader-text.
+	 * Test Teme doesn't use the SVG title or description attributes; non-decorative icons are described with .screen-reader-text.
 	 *
 	 * However, child themes can use the title and description to add information to non-decorative SVG icons to improve accessibility.
 	 *
-	 * Example 1 with title: <?php echo mero_magazine_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ) ) ); ?>
+	 * Example 1 with title: <?php echo test_teme_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ) ) ); ?>
 	 *
-	 * Example 2 with title and description: <?php echo mero_magazine_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ), 'desc' => __( 'This is the description', 'textdomain' ) ) ); ?>
+	 * Example 2 with title and description: <?php echo test_teme_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ), 'desc' => __( 'This is the description', 'textdomain' ) ) ); ?>
 	 *
 	 * See https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/.
 	 */
 	if ( $args['title'] ) {
 		$aria_hidden     = '';
-		$unique_id       = mero_magazine_unique_id();
+		$unique_id       = test_teme_unique_id();
 		$aria_labelledby = ' aria-labelledby="title-' . $unique_id . '"';
 
 		if ( $args['desc'] ) {
@@ -121,22 +121,22 @@ function mero_magazine_get_svg( $args = array() ) {
  * @param  array   $args        wp_nav_menu() arguments.
  * @return string  $item_output The menu item output with social icon.
  */
-function mero_magazine_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+function test_teme_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Get supported social icons.
-	$social_icons = mero_magazine_social_links_icons();
+	$social_icons = test_teme_social_links_icons();
 
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
-				$item_output = str_replace( $args->link_after, '</span>' . mero_magazine_get_svg( array( 'icon' => esc_attr( $value ) ) ), $item_output );
+				$item_output = str_replace( $args->link_after, '</span>' . test_teme_get_svg( array( 'icon' => esc_attr( $value ) ) ), $item_output );
 			}
 		}
 	}
 
 	return $item_output;
 }
-add_filter( 'walker_nav_menu_start_el', 'mero_magazine_nav_menu_social_icons', 10, 4 );
+add_filter( 'walker_nav_menu_start_el', 'test_teme_nav_menu_social_icons', 10, 4 );
 
 /**
  * Add dropdown icon if menu item has children.
@@ -147,11 +147,11 @@ add_filter( 'walker_nav_menu_start_el', 'mero_magazine_nav_menu_social_icons', 1
  * @param  int     $depth Depth of menu item. Used for padding.
  * @return string  $title The menu item's title with dropdown icon.
  */
-function mero_magazine_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
+function test_teme_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 	if ( 'primary_menu' === $args->theme_location ) {
 		foreach ( $item->classes as $value ) {
 			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . mero_magazine_get_svg( array( 'icon' => 'angle-down' ) );
+				$title = $title . test_teme_get_svg( array( 'icon' => 'angle-down' ) );
 			}
 		}
 	}
@@ -159,21 +159,21 @@ function mero_magazine_dropdown_icon_to_menu_link( $title, $item, $args, $depth 
 	if ( 'top_header_menu' === $args->theme_location ) {
 		foreach ( $item->classes as $value ) {
 			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . mero_magazine_get_svg( array( 'icon' => 'angle-down' ) );
+				$title = $title . test_teme_get_svg( array( 'icon' => 'angle-down' ) );
 			}
 		}
 	}
 
 	return $title;
 }
-add_filter( 'nav_menu_item_title', 'mero_magazine_dropdown_icon_to_menu_link', 10, 4 );
+add_filter( 'nav_menu_item_title', 'test_teme_dropdown_icon_to_menu_link', 10, 4 );
 
 /**
  * Returns an array of supported social links (URL and icon name).
  *
  * @return array $social_links_icons
  */
-function mero_magazine_social_links_icons() {
+function test_teme_social_links_icons() {
 	// Supported social links icons.
 	$social_links_icons = array(
 		'behance.net'     => 'behance',
@@ -216,11 +216,11 @@ function mero_magazine_social_links_icons() {
 	);
 
 	/**
-	 * Filter Mero Magazine social links icons.
+	 * Filter Test Teme social links icons.
 	 *
-	 * @since Mero Magazine 1.0
+	 * @since Test Teme 1.0
 	 *
 	 * @param array $social_links_icons Array of social links icons.
 	 */
-	return apply_filters( 'mero_magazine_social_links_icons', $social_links_icons );
+	return apply_filters( 'test_teme_social_links_icons', $social_links_icons );
 }

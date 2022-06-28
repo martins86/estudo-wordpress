@@ -1,25 +1,41 @@
 <?php
 /**
 * The template for displaying home page.
-*
-* @link https://codex.wordpress.org/Template_Hierarchy
-*
-* @package mero_magazine
 */
 
 if ( 'posts' != get_option( 'show_on_front' ) ) { 
 
 	get_header();
 
-	$featured_posts_section_show   		= get_theme_mod( 'featured_posts_section_show', false );
-	$business_posts_section_show   		= get_theme_mod( 'business_posts_section_show', false );
-	$lifestyle_posts_section_show  		= get_theme_mod( 'lifestyle_posts_section_show', false );
-	$first_advertisement_section_show  	= get_theme_mod( 'first_advertisement_section_show', false );
-	$first_advertisement_image          = get_theme_mod( 'first_advertisement_image' );
-	$first_advertisement_url            = get_theme_mod( 'first_advertisement_url', "#" );
-	$entertainment_posts_section_show   = get_theme_mod( 'entertainment_posts_section_show', false );
-	$health_posts_section_show   		= get_theme_mod( 'health_posts_section_show', false );
-	$travel_posts_section_show   		= get_theme_mod( 'travel_posts_section_show', false );
+	$featured_posts_section_show = get_theme_mod(
+		'featured_posts_section_show',
+		false
+	);
+	$business_posts_section_show = get_theme_mod(
+		'business_posts_section_show',
+		false
+	);
+	$lifestyle_posts_section_show = get_theme_mod(
+		'lifestyle_posts_section_show',
+		false
+	);
+	$first_advertisement_section_show = get_theme_mod(
+		'first_advertisement_section_show',
+		false
+	);
+	$first_advertisement_image = get_theme_mod(
+		'first_advertisement_image'
+	);
+	$first_advertisement_url = get_theme_mod(
+		'first_advertisement_url',
+		"#"
+	);
+	$entertainment_posts_section_show = get_theme_mod(
+		'entertainment_posts_section_show', false );
+	$health_posts_section_show = get_theme_mod(
+		'health_posts_section_show', false );
+	$travel_posts_section_show = get_theme_mod(
+		'travel_posts_section_show', false );
 
 	if ( $featured_posts_section_show == true ): ?>
 		<section id="featured-posts-section">
@@ -46,7 +62,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 									</div><!-- .featured-image -->
 
 									<div class="entry-container">
-										<?php mero_magazine_entry_footer(); ?>
+										<?php test_teme_entry_footer(); ?>
 
 										<header class="entry-header">
 											<h2 class="entry-title">
@@ -55,7 +71,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 								        </header>
 
 								        <div class="entry-meta">
-											<?php mero_magazine_posted_on(); ?>
+											<?php test_teme_posted_on(); ?>
 										</div><!-- .entry-meta -->
 									</div><!-- .entry-container -->
 								</div><!-- .blog-post-item -->
@@ -110,7 +126,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 								        </header>
 
 								        <div class="entry-meta">
-											<?php mero_magazine_posted_on(); ?>
+											<?php test_teme_posted_on(); ?>
 										</div><!-- .entry-meta -->
 									</div><!-- .entry-container -->
 								</div><!-- .blog-post-item -->
@@ -165,7 +181,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 								        </header>
 
 								        <div class="entry-meta">
-											<?php mero_magazine_posted_on(); ?>
+											<?php test_teme_posted_on(); ?>
 										</div><!-- .entry-meta -->
 									</div><!-- .entry-container -->
 								</div><!-- .blog-post-item -->
@@ -182,7 +198,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 		<?php if( !empty( $first_advertisement_image ) && !empty( $first_advertisement_url ) ) : ?>
 			<section id="first-advertisement">
 				<div class="container">
-		            <a href="<?php echo esc_url($first_advertisement_url); ?>" target="_blank"><img src="<?php echo esc_url($first_advertisement_image); ?>" alt="<?php esc_attr_e('first-advertisement', 'mero-magazine'); ?>"></a>
+		            <a href="<?php echo esc_url($first_advertisement_url); ?>" target="_blank"><img src="<?php echo esc_url($first_advertisement_image); ?>" alt="<?php esc_attr_e('first-advertisement', 'test-teme'); ?>"></a>
 		        </div><!-- .container -->
 	        </section><!-- #first-advertisement -->
         <?php endif; ?>
@@ -230,7 +246,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 								        </header>
 
 								        <div class="entry-meta">
-											<?php mero_magazine_posted_on(); ?>
+											<?php test_teme_posted_on(); ?>
 										</div><!-- .entry-meta -->
 									</div><!-- .entry-container -->
 								</div><!-- .blog-post-item -->
@@ -285,7 +301,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 								        </header>
 
 								        <div class="entry-meta">
-											<?php mero_magazine_posted_on(); ?>
+											<?php test_teme_posted_on(); ?>
 										</div><!-- .entry-meta -->
 									</div><!-- .entry-container -->
 								</div><!-- .blog-post-item -->
@@ -340,7 +356,7 @@ if ( 'posts' != get_option( 'show_on_front' ) ) {
 								        </header>
 
 								        <div class="entry-meta">
-											<?php mero_magazine_posted_on(); ?>
+											<?php test_teme_posted_on(); ?>
 										</div><!-- .entry-meta -->
 									</div><!-- .entry-container -->
 								</div><!-- .blog-post-item -->
