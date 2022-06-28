@@ -9,3 +9,12 @@ ports:
     onOpen: ignore
   - port: 9000
     onOpen: ignore
+
+# Tarefas na Inicialização
+tasks:
+  - name: Instalar o Docker
+    command: sudo apt-get install docker.io
+  - name: Permissões
+    command: sudo usermod -aG docker gitpod && sudo usermod -aG www-data gitpod
+  - name: Ativar o serviço do Docker
+    command: sudo systemctl start docker && sudo systemctl enable docker
